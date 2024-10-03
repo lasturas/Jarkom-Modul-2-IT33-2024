@@ -32,8 +32,8 @@
 
 ## TOPOLOGY
 Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah. Kerajaan tersebut adalah Sriwijaya. Karena merasa terdesak Sriwijaya meminta bantuan pada Majapahit untuk mempertahankan wilayahnya. Pertempuran besar tersebut berada di Nusantara. Untuk topologi lihat pada link [ini](https://drive.google.com/drive/folders/14Pe2HOks3NzF4f_mNdrziIF56QwiKfFn).
-- Kelompok IT33 mendapatkan topologi 3 
-![Screenshot (248)](https://github.com/user-attachments/assets/7acd8238-d52f-41e1-bce9-c9be5da85872)
+- Kelompok IT33 mendapatkan topologi 3
+- ![image](https://github.com/user-attachments/assets/d4dedbb8-89cb-4d44-89ae-63f696348bb5)
 
 ## KONFIGURASI
 | Kelompok | Prefix IP |
@@ -44,7 +44,7 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
 ### 1
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
 
-Untuk menyelesaikan soal ini
+- Buka terminal Nusantara, masukkan command `nano /root/.bashrc` --> masukkan `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.233.0.0/16` ini menggunakan prefix IP kelompok 
 
 ### 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke Solok dengan alamat sudarsana.xxxx.com dengan alias www.sudarsana.xxxx.com, dimana xxxx merupakan kode kelompok. Contoh: sudarsana.it01.com.

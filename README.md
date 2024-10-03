@@ -163,10 +163,10 @@ iface eth0 inet static
 
 
 # SOAL 
-## 1
+### 1
+<div style="border-left: 4px solid grey; padding-left: 10px;">
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
-
----
+</div>
 - Node Master --> Sriwijaya
 - Node Slave --> Majapahit
 - Node Client --> Mulawarman, GrahamBell, Samaratungga, Srikandi

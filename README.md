@@ -218,6 +218,40 @@ Selanjutkan `reload all nodes` dan uji dengan melakukan `ping google.com` pada s
 ### 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke Solok dengan alamat sudarsana.xxxx.com dengan alias www.sudarsana.xxxx.com, dimana xxxx merupakan kode kelompok. Contoh: sudarsana.it01.com.
 
+Pertama buka terminal Sriwijaya dan buat sebuah file (saya namai jarkom2) `nano jarkom2.bashrc` dan inputkan kode berikut 
+```
+#!/bin/bash
+
+# Domain sudarsana.it33.com
+echo 'zone "sudarsana.it23.com" {
+	type master;
+	file "/etc/bind/jarkom/sudarsana.it33.com";
+};' > /etc/bind/named.conf.local
+
+mkdir /etc/bind/jarkom
+
+cp /etc/bind/db.local /etc/bind/jarkom/sudarsana.it33.com
+
+echo '
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     sudarsana.it33.com. sudarsana.it33.com. (
+                        2024050301      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      sudarsana.it33.com.
+@       IN      A       192.233.2.2     ; IP Solok
+www     IN      CNAME   sudarsana.it33.com.' > /etc/bind/jarkom/sudarsana.it33.com
+
+service bind9 restart
+```
+Selanjutnya jalankan `chmod +x jarkom2.bashrc`
+
 
 ### 3
 Para pasukan juga perlu mengetahui mana titik yang akan diserang, sehingga dibutuhkan domain lain yaitu pasopati.xxxx.com dengan alias www.pasopati.xxxx.com yang mengarah ke Kotalingga.

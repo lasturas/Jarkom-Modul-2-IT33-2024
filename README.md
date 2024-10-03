@@ -259,6 +259,7 @@ Jika sudah maka coba lakukan ping pada semua node client
 ```
 ping sudarsana.it33.com
 ```
+#### Dokumentasi Sudarsana 
 - Mulawarman  
 ![image](https://github.com/user-attachments/assets/281da52c-f758-4303-8313-955abaeb3fb3)
 - GrahamBell  
@@ -314,7 +315,7 @@ Jika sudah maka coba lakukan ping pada semua node client
 ```
 ping pasopati.it33.com
 ```
-
+#### Dokumentasi Pasopati
 - Mulawarman  
 ![image](https://github.com/user-attachments/assets/477b664e-8772-4b04-b537-882c0b2e8f15)
 - GrahamBell  
@@ -370,7 +371,7 @@ Jika sudah maka coba lakukan ping pada semua node client
 ```
 ping pasopati.it33.com
 ```
-
+#### Dokumentasi Rujapala
 - Mulawarman  
 ![image](https://github.com/user-attachments/assets/276bf2f3-910f-40ae-83d1-f036083fa090)
 - GrahamBell  
@@ -384,7 +385,7 @@ ping pasopati.it33.com
 ### 5
 Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.
 
-Untuk bukti dokumentasi dapat dilihat di bagian atas pada soal 2 - 4
+Untuk bukti dokumentasi dapat dilihat di bagian atas pada soal 2 - 4, atau klik berikut ini [sudarsana](#dokumentasi-sudarsana), [pasopati](#dokumentasi-pasopati), [rujapala](#dokumentasi-rujapala)
 
 ### 6
 Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).

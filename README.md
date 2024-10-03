@@ -55,7 +55,7 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
 | GrahamBell   | eth0      | 192.233.1.4   | 192.233.1.1  |
 | Samaratungga | eth0      | 192.233.1.5   | 192.233.1.1  |
 
-**Nusantara**  
+**Nusantara (Router)**  
 ```
  auto eth0  
  iface eth0 inet dhcp  
@@ -71,7 +71,7 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
  	netmask 255.255.255.0  
 ```
 
-**Majapahit**  
+**Majapahit (DNS Slave)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -80,7 +80,7 @@ iface eth0 inet static
    	gateway 192.233.1.1   
 ```
 
-**Mulawarman**  
+**Mulawarman (Client)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -89,7 +89,7 @@ iface eth0 inet static
    	gateway 192.233.1.1  
 ```
    
-**GrahamBell**  
+**GrahamBell (Client)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -98,7 +98,7 @@ iface eth0 inet static
    	gateway 192.233.1.1  
 ```
    
-**Samaratungga**  
+**Samaratungga (Client)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -107,7 +107,7 @@ iface eth0 inet static
    	gateway 192.233.1.1  
 ```
 
-**Solok**  
+**Solok (Load Balancer)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -116,7 +116,7 @@ iface eth0 inet static
    	gateway 192.233.2.1  
 ```
    
-**Srikandi**  
+**Srikandi (Client)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -125,7 +125,7 @@ iface eth0 inet static
   	gateway 192.233.2.1  
 ```
 
-**Kotalingga**  
+**Kotalingga (Web Server)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -134,7 +134,7 @@ iface eth0 inet static
    	gateway 192.233.2.1  
 ```
    
-**Bedahulu**  
+**Bedahulu (Web Servevr)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -143,7 +143,7 @@ iface eth0 inet static
     	gateway 192.233.2.1  
 ```
    
-**Tanjungkulai**  
+**Tanjungkulai (Web Server)**  
 ```
 auto eth0  
 iface eth0 inet static  
@@ -152,7 +152,7 @@ iface eth0 inet static
    	gateway 192.233.2.1  
 ```
    
-**Sriwijaya**  
+**Sriwijaya (DNS Master)**  
 ```
 auto eth0  
 iface eth0 inet static  

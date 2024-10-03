@@ -33,12 +33,97 @@
 ## TOPOLOGY
 Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah. Kerajaan tersebut adalah Sriwijaya. Karena merasa terdesak Sriwijaya meminta bantuan pada Majapahit untuk mempertahankan wilayahnya. Pertempuran besar tersebut berada di Nusantara. Untuk topologi lihat pada link [ini](https://drive.google.com/drive/folders/14Pe2HOks3NzF4f_mNdrziIF56QwiKfFn).
 - Kelompok IT33 mendapatkan topologi 3
-- ![image](https://github.com/user-attachments/assets/d4dedbb8-89cb-4d44-89ae-63f696348bb5)
+![image](https://github.com/user-attachments/assets/d4dedbb8-89cb-4d44-89ae-63f696348bb5)
 
 ## KONFIGURASI
 | Kelompok | Prefix IP |
 |----------|----------|
 | IT33 | 192.233 |
+
+**Nusantara**
+ auto eth0
+ iface eth0 inet dhcp
+
+ auto eth1
+ iface eth1 inet static
+ 	address 192.233.1.1
+ 	netmask 255.255.255.0
+
+ auto eth2
+ iface eth2 inet static
+ 	address 192.233.2.1
+ 	netmask 255.255.255.0
+
+**Majapahit**
+auto eth0
+iface eth0 inet static
+	address 192.233.1.2
+	netmask 255.255.255.0
+   gateway 192.233.1.1
+
+**Mulawarman**
+auto eth0
+iface eth0 inet static
+	address 192.233.1.3
+	netmask 255.255.255.0
+   gateway 192.233.1.1
+   
+**GrahamBell**
+auto eth0
+iface eth0 inet static
+	address 192.233.1.4
+	netmask 255.255.255.0
+   gateway 192.233.1.1
+   
+**Samaratungga**
+auto eth0
+iface eth0 inet static
+	address 192.233.1.5
+	netmask 255.255.255.0
+   gateway 192.233.1.1
+
+**Solok**
+auto eth0
+iface eth0 inet static
+	address 192.233.2.2
+	netmask 255.255.255.0
+   gateway 192.233.2.1
+   
+**Srikandi**
+auto eth0
+iface eth0 inet static
+	address 192.233.2.3
+	netmask 255.255.255.0
+   gateway 192.233.2.1
+
+**Kotalingga**
+auto eth0
+iface eth0 inet static
+	address 192.233.2.4
+	netmask 255.255.255.0
+   gateway 192.233.2.1
+   
+**Bedahulu**
+auto eth0
+iface eth0 inet static
+	address 192.233.2.5
+	netmask 255.255.255.0
+   gateway 192.233.2.1
+   
+**Tanjungkulai**
+auto eth0
+iface eth0 inet static
+	address 192.233.2.6
+	netmask 255.255.255.0
+   gateway 192.233.2.1
+   
+**Sriwijaya**
+auto eth0
+iface eth0 inet static
+	address 192.233.2.7
+	netmask 255.255.255.0
+   gateway 192.233.2.1
+
 
 ## SOAL 
 ### 1

@@ -172,6 +172,7 @@ Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya me
 - Node Web Server --> Kotalingga, Bedahulu, Tanjungkulai
 - Node Load Balancer --> Solok
 
+---
 Buka terminal Nusantara, masukkan command untuk masuk ke bash `nano /root/.bashrc` dan inputkan kode berikut untuk NAT dengan menggunakan prefix IP kelompok
 ```
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.233.0.0/16

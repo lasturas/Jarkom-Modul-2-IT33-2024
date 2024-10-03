@@ -7,33 +7,44 @@
 
 # Daftar Isi
 1. [Topology](#topology)
-2. [Soal](#soal)
+2. [Konfigurasi](#konfigurasi)
+3. [Soal](#soal)
    - [No 1](#1)
    - [No 2](#2)
-   - [No 3](#2)
-   - [No 4](#2)
-   - [No 5](#2)
-   - [No 6](#2)
-   - [No 7](#2)
-   - [No 8](#2)
-   - [No 9](#2)
-   - [No 10](#2)
-   - [No 11](#2)
-   - [No 12](#2)
-   - [No 13](#2)
-   - [No 14](#2)
-   - [No 15](#2)
-   - [No 16](#2)
-   - [No 17](#2)
-   - [No 18](#2)
-   - [No 19](#2)
-   - [No 20](#2)
+   - [No 3](#3)
+   - [No 4](#4)
+   - [No 5](#5)
+   - [No 6](#6)
+   - [No 7](#7)
+   - [No 8](#8)
+   - [No 9](#9)
+   - [No 10](#10)
+   - [No 11](#11)
+   - [No 12](#12)
+   - [No 13](#13)
+   - [No 14](#14)
+   - [No 15](#15)
+   - [No 16](#16)
+   - [No 17](#17)
+   - [No 18](#18)
+   - [No 19](#19)
+   - [No 20](#20)
 
 ## TOPOLOGY
+Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah. Kerajaan tersebut adalah Sriwijaya. Karena merasa terdesak Sriwijaya meminta bantuan pada Majapahit untuk mempertahankan wilayahnya. Pertempuran besar tersebut berada di Nusantara. Untuk topologi lihat pada link [ini](https://drive.google.com/drive/folders/14Pe2HOks3NzF4f_mNdrziIF56QwiKfFn).
+- Kelompok IT33 mendapatkan topologi 3 
+![Screenshot (248)](https://github.com/user-attachments/assets/7acd8238-d52f-41e1-bce9-c9be5da85872)
+
+## KONFIGURASI
+| Kelompok | Prefix IP |
+|----------|----------|
+| IT33 | 192.233 |
 
 ## SOAL 
 ### 1
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
+
+Untuk menyelesaikan soal ini
 
 ### 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke Solok dengan alamat sudarsana.xxxx.com dengan alias www.sudarsana.xxxx.com, dimana xxxx merupakan kode kelompok. Contoh: sudarsana.it01.com.

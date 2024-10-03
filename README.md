@@ -180,7 +180,7 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.233.0.0/16
 
 Cek nameserver dengan command berikut pada terminal Nusantara
 ```
-cat /ets/resolv.conf
+cat /etc/resolv.conf
 ```
 Lalu akan muncul informasi nameserver Nusantara `nameserver 192.168.122.1`
 

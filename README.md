@@ -386,7 +386,22 @@ ping pasopati.it33.com
 Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.
 
 Untuk bukti dokumentasi dapat dilihat di bagian atas pada soal 2 - 4, atau klik berikut ini [sudarsana](#dokumentasi-sudarsana), [pasopati](#dokumentasi-pasopati), [rujapala](#dokumentasi-rujapala)
-
+Berikut ini command untuk melakukan ping 
+- Sudarsana
+```
+ping sudarsana.it33.com
+ping www.sudarsana.it33.com
+```
+- Pasopati
+```
+ping pasopati.it33.com
+ping www.pasopati.it33.com
+```
+- Rujapala
+```
+ping rujapala.it33.com
+ping www.rujapala.it33.com
+```
 ### 6
 Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).
 

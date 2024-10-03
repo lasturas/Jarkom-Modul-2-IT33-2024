@@ -192,25 +192,25 @@ echo 'nameserver 192.168.122.1' > /etc/resolv.conf
 ```
 Selanjutkan `reload all nodes` dan uji dengan melakukan `ping google.com` pada setiap node
 
-- Majapahit
+- Majapahit  
 ![image](https://github.com/user-attachments/assets/3f2692a5-c285-4333-ad05-f0f3dbf56114)
-- Mulawarman
+- Mulawarman  
 ![image](https://github.com/user-attachments/assets/da8382c2-c71d-4133-9834-4aa636884c61)
-- GrahamBell
+- GrahamBell  
 ![image](https://github.com/user-attachments/assets/86d3312f-e152-4aa1-88f4-768b83b8f56f)
-- Samaratungga
+- Samaratungga  
 ![image](https://github.com/user-attachments/assets/abb5fab3-9119-4bc2-a1dd-bf29b26f550b)
-- Solok
+- Solok  
 ![image](https://github.com/user-attachments/assets/94d3f4b5-3bc5-4a23-84c0-a96caed7ed59)
-- Srikandi
+- Srikandi  
 ![image](https://github.com/user-attachments/assets/d8277975-9a99-4d2e-85bc-3eb93e5c5259)
-- Kotalingga
+- Kotalingga  
 ![image](https://github.com/user-attachments/assets/fd36ec8f-aba4-451c-b87b-147051208afd)
-- Bedahulu
+- Bedahulu  
 ![image](https://github.com/user-attachments/assets/4872cd45-4fc3-4482-a31d-8a58f021de22)
-- Tanjungkulai
+- Tanjungkulai  
 ![image](https://github.com/user-attachments/assets/57c989bc-bc38-4291-8484-3ddc5f6a59e8)
-- Sriwijaya  
+- Sriwijaya   
 ![image](https://github.com/user-attachments/assets/a976542c-c8b7-45e7-bf79-e999dbe2fb9a)
 
 
@@ -259,13 +259,13 @@ Jika sudah maka coba lakukan ping pada semua node client
 ```
 ping sudarsana.it33.com
 ```
-- Mulawarman
+- Mulawarman  
 ![image](https://github.com/user-attachments/assets/281da52c-f758-4303-8313-955abaeb3fb3)
-- GrahamBell
+- GrahamBell  
 ![image](https://github.com/user-attachments/assets/7b61796c-af75-407e-beaf-1ec52c170fc1)
-- Samaratungga
+- Samaratungga  
 ![image](https://github.com/user-attachments/assets/a77be080-e7d4-4e3e-a09a-df14296d56b8)
-- Srikandi
+- Srikandi  
 ![image](https://github.com/user-attachments/assets/197a6e67-04f8-407d-92e5-328453d02fab)
 
 
@@ -315,13 +315,13 @@ Jika sudah maka coba lakukan ping pada semua node client
 ping pasopati.it33.com
 ```
 
-- Mulawarman
+- Mulawarman  
 ![image](https://github.com/user-attachments/assets/477b664e-8772-4b04-b537-882c0b2e8f15)
-- GrahamBell
+- GrahamBell  
 ![image](https://github.com/user-attachments/assets/3482c324-507d-41a7-8a06-edaa40547d41)
-- Samaratungga
+- Samaratungga  
 ![image](https://github.com/user-attachments/assets/ab84d38f-a3e5-4ea0-b27e-73522c159cb7)
-- Srikandi
+- Srikandi  
 ![image](https://github.com/user-attachments/assets/2ce27bb2-59be-4b26-a532-4dcb1ea8b3a0)
 
 
@@ -371,18 +371,20 @@ Jika sudah maka coba lakukan ping pada semua node client
 ping pasopati.it33.com
 ```
 
-- Mulawarman
+- Mulawarman  
 ![image](https://github.com/user-attachments/assets/276bf2f3-910f-40ae-83d1-f036083fa090)
-- GrahamBell
+- GrahamBell  
 ![image](https://github.com/user-attachments/assets/89ef13cf-272b-4d43-a41d-3237deaff334)
-- Samaratungga
+- Samaratungga  
 ![image](https://github.com/user-attachments/assets/0eb71bda-9541-4461-856f-5e067f208392)
-- Srikandi
+- Srikandi  
 ![image](https://github.com/user-attachments/assets/fa106321-9ac0-45ba-b1f4-dda45d686b54)
-- 
+
 
 ### 5
 Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.
+
+Untuk bukti dokumentasi dapat dilihat di bagian atas pada soal 2 - 4
 
 ### 6
 Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).

@@ -35,12 +35,10 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
 - Kelompok IT33 mendapatkan topologi 3
 ![image](https://github.com/user-attachments/assets/d4dedbb8-89cb-4d44-89ae-63f696348bb5)
 
-## KONFIGURASI
+## KONFIGURASI IP Address
 | Kelompok | Prefix IP |
 |----------|----------|
 | IT33 | 192.233 |
-
-## Daftar IP Address
 
 | Nama Kota    | Interface | IP Address  | Gateway    |
 |--------------|-----------|-------------|------------|

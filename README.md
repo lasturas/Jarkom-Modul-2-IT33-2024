@@ -210,7 +210,7 @@ Selanjutkan `reload all nodes` dan uji dengan melakukan `ping google.com` pada s
 ![image](https://github.com/user-attachments/assets/4872cd45-4fc3-4482-a31d-8a58f021de22)
 - Tanjungkulai
 ![image](https://github.com/user-attachments/assets/57c989bc-bc38-4291-8484-3ddc5f6a59e8)
-- Sriwijaya
+- Sriwijaya  
 ![image](https://github.com/user-attachments/assets/a976542c-c8b7-45e7-bf79-e999dbe2fb9a)
 
 
@@ -223,7 +223,7 @@ Pertama buka terminal Sriwijaya dan buat sebuah file (saya namai jarkom2) `nano 
 #!/bin/bash
 
 # Domain sudarsana.it33.com
-echo 'zone "sudarsana.it23.com" {
+echo 'zone "sudarsana.it33.com" {
 	type master;
 	file "/etc/bind/jarkom/sudarsana.it33.com";
 };' > /etc/bind/named.conf.local
@@ -250,14 +250,136 @@ www     IN      CNAME   sudarsana.it33.com.' > /etc/bind/jarkom/sudarsana.it33.c
 
 service bind9 restart
 ```
-Selanjutnya jalankan `chmod +x jarkom2.bashrc`
+Selanjutnya jalankan `chmod +x jarkom2.bashrc` dan langsung jalankan filenya dengan `./jarkom2.bashrc`
+Setelah dijalankan kirimkan command 
+```
+service bind9 restart
+```
+Jika sudah maka coba lakukan ping pada semua node client 
+```
+ping sudarsana.it33.com
+```
+- Mulawarman
+![image](https://github.com/user-attachments/assets/281da52c-f758-4303-8313-955abaeb3fb3)
+- GrahamBell
+![image](https://github.com/user-attachments/assets/7b61796c-af75-407e-beaf-1ec52c170fc1)
+- Samaratungga
+![image](https://github.com/user-attachments/assets/a77be080-e7d4-4e3e-a09a-df14296d56b8)
+- Srikandi
+![image](https://github.com/user-attachments/assets/197a6e67-04f8-407d-92e5-328453d02fab)
+
 
 
 ### 3
 Para pasukan juga perlu mengetahui mana titik yang akan diserang, sehingga dibutuhkan domain lain yaitu pasopati.xxxx.com dengan alias www.pasopati.xxxx.com yang mengarah ke Kotalingga.
 
+Untuk pengerjaan soal ini sama dengan soal no 2, kita hanya perlu mengubah ip dan domain saja. Berikut kode di dalam file yang dinamai jarkom3.bashrc 
+```
+#!/bin/bash
+
+# Domain pasopati.it33.com
+echo 'zone "pasopati.it33.com" {
+	type master;
+	file "/etc/bind/jarkom/pasopati.it33.com";
+};' > /etc/bind/named.conf.local
+
+mkdir /etc/bind/jarkom
+
+cp /etc/bind/db.local /etc/bind/jarkom/pasopati.it33.com
+
+echo '
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     pasopati.it33.com. pasopati.it33.com. (
+                        2024050301      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      pasopati.it33.com.
+@       IN      A       192.233.2.4     ; IP Kotalingga
+www     IN      CNAME   pasopati.it33.com.' > /etc/bind/jarkom/pasopati.it33.com
+
+service bind9 restart
+```
+Lalu kita jalankan  `chmod +x jarkom3.bashrc` dan langsung jalankan filenya dengan `./jarkom3.bashrc`
+Setelah dijalankan kirimkan command 
+```
+service bind9 restart
+```
+Jika sudah maka coba lakukan ping pada semua node client 
+```
+ping pasopati.it33.com
+```
+
+- Mulawarman
+![image](https://github.com/user-attachments/assets/477b664e-8772-4b04-b537-882c0b2e8f15)
+- GrahamBell
+![image](https://github.com/user-attachments/assets/3482c324-507d-41a7-8a06-edaa40547d41)
+- Samaratungga
+![image](https://github.com/user-attachments/assets/ab84d38f-a3e5-4ea0-b27e-73522c159cb7)
+- Srikandi
+![image](https://github.com/user-attachments/assets/2ce27bb2-59be-4b26-a532-4dcb1ea8b3a0)
+
+
+
 ### 4
 Markas pusat meminta dibuatnya domain khusus untuk menaruh informasi persenjataan dan suplai yang tersebar. Informasi dan suplai meme terbaru tersebut mengarah ke Tanjungkulai dan domain yang ingin digunakan adalah rujapala.xxxx.com dengan alias www.rujapala.xxxx.com.
+
+Cara mengerjakan no 4 juga sama dengan dua soal sebelumnya, buka terminal Sriwijaya dan kita hanya perlu mengubah ip dan domain saja. Berikut kode di dalam file yang dinamai jarkom4.bashrc
+```
+#!/bin/bash
+
+# Domain rujapala.it33.com
+echo 'zone "rujapala.it33.com" {
+	type master;
+	file "/etc/bind/jarkom/rujapala.it33.com";
+};' > /etc/bind/named.conf.local
+
+mkdir /etc/bind/jarkom
+
+cp /etc/bind/db.local /etc/bind/jarkom/rujapala.it33.com
+
+echo '
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     rujapala.it33.com. rujapala.it33.com. (
+                        2024050301      ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      rujapala.it33.com.
+@       IN      A       192.233.2.6     ; IP Tanjungkulai
+www     IN      CNAME   rujapala.it33.com.' > /etc/bind/jarkom/rujapala.it33.com
+
+service bind9 restart
+```
+Lalu kita jalankan  `chmod +x jarkom3.bashrc` dan langsung jalankan filenya dengan `./jarkom3.bashrc`
+Setelah dijalankan kirimkan command 
+```
+service bind9 restart
+```
+Jika sudah maka coba lakukan ping pada semua node client 
+```
+ping pasopati.it33.com
+```
+
+- Mulawarman
+![image](https://github.com/user-attachments/assets/276bf2f3-910f-40ae-83d1-f036083fa090)
+- GrahamBell
+![image](https://github.com/user-attachments/assets/89ef13cf-272b-4d43-a41d-3237deaff334)
+- Samaratungga
+![image](https://github.com/user-attachments/assets/0eb71bda-9541-4461-856f-5e067f208392)
+- Srikandi
+![image](https://github.com/user-attachments/assets/fa106321-9ac0-45ba-b1f4-dda45d686b54)
+- 
 
 ### 5
 Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.

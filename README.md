@@ -30,12 +30,12 @@
    - [No 19](#19)
    - [No 20](#20)
 
-## TOPOLOGY
+# TOPOLOGY
 Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah. Kerajaan tersebut adalah Sriwijaya. Karena merasa terdesak Sriwijaya meminta bantuan pada Majapahit untuk mempertahankan wilayahnya. Pertempuran besar tersebut berada di Nusantara. Untuk topologi lihat pada link [ini](https://drive.google.com/drive/folders/14Pe2HOks3NzF4f_mNdrziIF56QwiKfFn).
 - Kelompok IT33 mendapatkan topologi 3
 ![image](https://github.com/user-attachments/assets/d4dedbb8-89cb-4d44-89ae-63f696348bb5)
 
-## KONFIGURASI IP Address
+# KONFIGURASI IP Address
 | Kelompok | Prefix IP |
 |----------|----------|
 | IT33 | 192.233 |

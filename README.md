@@ -40,96 +40,180 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
 |----------|----------|
 | IT33 | 192.233 |
 
-**Nusantara**
- auto eth0
- iface eth0 inet dhcp
+**Nusantara**  
+```
+ auto eth0  
+ iface eth0 inet dhcp  
 
- auto eth1
- iface eth1 inet static
- 	address 192.233.1.1
- 	netmask 255.255.255.0
+ auto eth1  
+ iface eth1 inet static  
+ 	address 192.233.1.1 
+ 	netmask 255.255.255.0 
 
- auto eth2
- iface eth2 inet static
- 	address 192.233.2.1
- 	netmask 255.255.255.0
+ auto eth2  
+ iface eth2 inet static  
+ 	address 192.233.2.1  
+ 	netmask 255.255.255.0  
+```
 
-**Majapahit**
-auto eth0
-iface eth0 inet static
-	address 192.233.1.2
-	netmask 255.255.255.0
-   gateway 192.233.1.1
+**Majapahit**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.1.2   
+	netmask 255.255.255.0   
+   	gateway 192.233.1.1   
+```
 
-**Mulawarman**
-auto eth0
-iface eth0 inet static
-	address 192.233.1.3
-	netmask 255.255.255.0
-   gateway 192.233.1.1
+**Mulawarman**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.1.3  
+	netmask 255.255.255.0  
+   	gateway 192.233.1.1  
+```
    
-**GrahamBell**
-auto eth0
-iface eth0 inet static
-	address 192.233.1.4
-	netmask 255.255.255.0
-   gateway 192.233.1.1
+**GrahamBell**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.1.4  
+	netmask 255.255.255.0  
+   	gateway 192.233.1.1  
+```
    
-**Samaratungga**
-auto eth0
-iface eth0 inet static
-	address 192.233.1.5
-	netmask 255.255.255.0
-   gateway 192.233.1.1
+**Samaratungga**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.1.5  
+	netmask 255.255.255.0  
+   	gateway 192.233.1.1  
+```
 
-**Solok**
-auto eth0
-iface eth0 inet static
-	address 192.233.2.2
-	netmask 255.255.255.0
-   gateway 192.233.2.1
+**Solok**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.2.2  
+	netmask 255.255.255.0  
+   	gateway 192.233.2.1  
+```
    
-**Srikandi**
-auto eth0
-iface eth0 inet static
-	address 192.233.2.3
-	netmask 255.255.255.0
-   gateway 192.233.2.1
+**Srikandi**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.2.3  
+	netmask 255.255.255.0  
+  	gateway 192.233.2.1  
+```
 
-**Kotalingga**
-auto eth0
-iface eth0 inet static
-	address 192.233.2.4
-	netmask 255.255.255.0
-   gateway 192.233.2.1
+**Kotalingga**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.2.4  
+	netmask 255.255.255.0  
+   	gateway 192.233.2.1  
+```
    
-**Bedahulu**
-auto eth0
-iface eth0 inet static
-	address 192.233.2.5
-	netmask 255.255.255.0
-   gateway 192.233.2.1
+**Bedahulu**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.2.5  
+	netmask 255.255.255.0  
+    	gateway 192.233.2.1  
+```
    
-**Tanjungkulai**
-auto eth0
-iface eth0 inet static
-	address 192.233.2.6
-	netmask 255.255.255.0
-   gateway 192.233.2.1
+**Tanjungkulai**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.2.6  
+	netmask 255.255.255.0  
+   	gateway 192.233.2.1  
+```
    
-**Sriwijaya**
-auto eth0
-iface eth0 inet static
-	address 192.233.2.7
-	netmask 255.255.255.0
-   gateway 192.233.2.1
+**Sriwijaya**  
+```
+auto eth0  
+iface eth0 inet static  
+	address 192.233.2.7  
+	netmask 255.255.255.0  
+   	gateway 192.233.2.1  
+```
 
 
 ## SOAL 
 ### 1
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
 
-- Buka terminal Nusantara, masukkan command `nano /root/.bashrc` --> masukkan `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.233.0.0/16` ini menggunakan prefix IP kelompok 
+- Node Master --> Sriwijaya
+- Node Slave --> Majapahit
+- Node Client --> Mulawarman, GrahamBell, Samaratungga, Srikandi
+- Node Web Server --> Kotalingga, Bedahulu, Tanjungkulai
+- Node Load Balancer --> Solok
+
+Buka terminal Nusantara, masukkan command untuk masuk ke bash `nano /root/.bashrc` dan inputkan kode berikut untuk NAT dengan menggunakan prefix IP kelompok
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.233.0.0/16
+``` 
+
+Cek nameserver dengan command berikut pada terminal Nusantara
+```
+cat /ets/resolv.conf
+```
+Lalu akan muncul informasi nameserver Nusantara `nameserver 192.168.122.1`
+
+Selanjutnya kita buka terminal setiap node dan masuk ke bash dengan `nano /root/.bashrc`, untuk 
+- Node client akan menggunakan 3 IP (rooter, IP master, IP slave)
+```
+echo 'nameserver 192.168.122.1
+nameserver 192.233.2.7
+nameserver 192.233.1.2' > /etc/resolv.conf
+```
+- Node master akan menggunakan IP rooter dan install bind9
+```
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt-get install bind9 -y
+```
+- Node slave akan menggunakan IP rooter dan IP Master 
+```
+echo 'nameserver 192.168.122.1
+nameserver 192.233.2.7' > /etc/resolv.conf
+```
+- Node web server, dan load balancer akan menggunakan IP rooter
+```
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+```
+Selanjutkan `reload all nodes` dan uji dengan melakukan `ping google.com` pada setiap node
+
+- Majapahit
+![image](https://github.com/user-attachments/assets/3f2692a5-c285-4333-ad05-f0f3dbf56114)
+- Mulawarman
+![image](https://github.com/user-attachments/assets/da8382c2-c71d-4133-9834-4aa636884c61)
+- GrahamBell
+![image](https://github.com/user-attachments/assets/86d3312f-e152-4aa1-88f4-768b83b8f56f)
+- Samaratungga
+![image](https://github.com/user-attachments/assets/abb5fab3-9119-4bc2-a1dd-bf29b26f550b)
+- Solok
+![image](https://github.com/user-attachments/assets/94d3f4b5-3bc5-4a23-84c0-a96caed7ed59)
+- Srikandi
+![image](https://github.com/user-attachments/assets/d8277975-9a99-4d2e-85bc-3eb93e5c5259)
+- Kotalingga
+![image](https://github.com/user-attachments/assets/fd36ec8f-aba4-451c-b87b-147051208afd)
+- Bedahulu
+![image](https://github.com/user-attachments/assets/4872cd45-4fc3-4482-a31d-8a58f021de22)
+- Tanjungkulai
+![image](https://github.com/user-attachments/assets/57c989bc-bc38-4291-8484-3ddc5f6a59e8)
+- Sriwijaya
+![image](https://github.com/user-attachments/assets/a976542c-c8b7-45e7-bf79-e999dbe2fb9a)
+
+
 
 ### 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke Solok dengan alamat sudarsana.xxxx.com dengan alias www.sudarsana.xxxx.com, dimana xxxx merupakan kode kelompok. Contoh: sudarsana.it01.com.

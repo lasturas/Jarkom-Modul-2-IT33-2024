@@ -44,18 +44,18 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
 
 | Nama Kota    | Interface | IP Address  | Gateway    |
 |--------------|-----------|-------------|------------|
-| Nusantara    | eth1      | 10.68.1.1   |            |
-|              | eth2      | 10.68.2.1   |            |
-| Sriwijaya    | eth0      | 10.68.2.7   | 10.68.2.1  |
-| Tanjungkulai | eth0      | 10.68.2.6   | 10.68.2.1  |
-| Bedahulu     | eth0      | 10.68.2.5   | 10.68.2.1  |
-| Kotalingga   | eth0      | 10.68.2.4   | 10.68.2.1  |
-| Srikandi     | eth0      | 10.68.2.3   | 10.68.2.1  |
-| Solok        | eth0      | 10.68.2.2   | 10.68.2.1  |
-| Majapahit    | eth0      | 10.68.1.2   | 10.68.1.1  |
-| Mulawarman   | eth0      | 10.68.1.3   | 10.68.1.1  |
-| GrahamBell   | eth0      | 10.68.1.4   | 10.68.1.1  |
-| Samaratungga | eth0      | 10.68.1.5   | 10.68.1.1  |
+| Nusantara    | eth1      | 192.233.1.1   |            |
+|              | eth2      | 192.233.2.1   |            |
+| Sriwijaya    | eth0      | 192.233.2.7   | 192.233.2.1  |
+| Tanjungkulai | eth0      | 192.233.2.6   | 192.233.2.1  |
+| Bedahulu     | eth0      | 192.233.2.5   | 192.233.2.1  |
+| Kotalingga   | eth0      | 192.233.2.4   | 192.233.2.1  |
+| Srikandi     | eth0      | 192.233.2.3   | 192.233.2.1  |
+| Solok        | eth0      | 192.233.2.2   | 192.233.2.1  |
+| Majapahit    | eth0      | 192.233.1.2   | 192.233.1.1  |
+| Mulawarman   | eth0      | 192.233.1.3   | 192.233.1.1  |
+| GrahamBell   | eth0      | 192.233.1.4   | 192.233.1.1  |
+| Samaratungga | eth0      | 192.233.1.5   | 192.233.1.1  |
 
 **Nusantara**  
 ```

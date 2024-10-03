@@ -40,6 +40,23 @@ Sebuah kerajaan besar di Indonesia sedang mengalami pertempuran dengan penjajah.
 |----------|----------|
 | IT33 | 192.233 |
 
+## Daftar IP Address
+
+| Nama Kota    | Interface | IP Address  | Gateway    |
+|--------------|-----------|-------------|------------|
+| Nusantara    | eth1      | 10.68.1.1   |            |
+|              | eth2      | 10.68.2.1   |            |
+| Sriwijaya    | eth0      | 10.68.2.7   | 10.68.2.1  |
+| Tanjungkulai | eth0      | 10.68.2.6   | 10.68.2.1  |
+| Bedahulu     | eth0      | 10.68.2.5   | 10.68.2.1  |
+| Kotalingga   | eth0      | 10.68.2.4   | 10.68.2.1  |
+| Srikandi     | eth0      | 10.68.2.3   | 10.68.2.1  |
+| Solok        | eth0      | 10.68.2.2   | 10.68.2.1  |
+| Majapahit    | eth0      | 10.68.1.2   | 10.68.1.1  |
+| Mulawarman   | eth0      | 10.68.1.3   | 10.68.1.1  |
+| GrahamBell   | eth0      | 10.68.1.4   | 10.68.1.1  |
+| Samaratungga | eth0      | 10.68.1.5   | 10.68.1.1  |
+
 **Nusantara**  
 ```
  auto eth0  

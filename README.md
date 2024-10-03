@@ -164,7 +164,7 @@ iface eth0 inet static
 
 # Soal Praktikum 
 ## No. 1
-<div style="border-left: 4px solid grey; padding-left: 10px; color: grey;">
+
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
 
 - Node Master --> Sriwijaya
@@ -172,7 +172,7 @@ Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya me
 - Node Client --> Mulawarman, GrahamBell, Samaratungga, Srikandi
 - Node Web Server --> Kotalingga, Bedahulu, Tanjungkulai
 - Node Load Balancer --> Solok
-</div>
+
 Buka terminal Nusantara, masukkan command untuk masuk ke bash `nano /root/.bashrc` dan inputkan kode berikut untuk NAT dengan menggunakan prefix IP kelompok
 ```
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.233.0.0/16

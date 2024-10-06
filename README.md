@@ -7,8 +7,8 @@
 
 # Daftar Isi
 1. [Topology](#topology)
-2. [Konfigurasi](#konfigurasi)
-3. [Soal](#soal)
+2. [Konfigurasi](#konfigurasi-ip-address)
+3. [Soal](#soal-praktikum)
    - [No 1](#no-1)
    - [No 2](#no-2)
    - [No 3](#no-3)
@@ -415,6 +415,59 @@ ping www.rujapala.it33.com
 ```
 ## No 6
 Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).
+
+Untuk menyelesaikan soal ini kita bisa menggunakan reverse DNS (Record PTR). Untuk IP Kotalingga yang awalnya adalah `192.233.2.4` akan direverse, sehingga hasilnya adalah `2.233.192`
+
+Jalankan pada Sriwijaya `nano /etc/bind/named.conf.local`
+
+```
+zone "2.233.192.in-addr.arpa" {
+type master;
+file "/etc/bind/jarkom33/2.233.192.in-addr.arpa";
+};
+```
+Setelah itu copy file `db.local` menuju folder jarkom33 yang sudah dibuat 
+```
+cp /etc/bind/db.local /etc/bind/jarkom33/2.233.192.in-addr.arpa
+```
+Setelah itu buka file `nano /etc/bind/jarkom33/2.233.192.in-addr.arpa` dan edit konfigurasinya menjadi seperti berikut ini. Perhatikan untuk bagian IP reversenya serta nama domain
+```
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     pasopati.it33.com. root.pasopati.it33.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+2.233.192.in-addr.arpa.         IN      NS      pasopati.it33.com.
+4                             	IN      PTR     pasopati.it33.com.
+
+```
+Setelah itu restart bind9 dengan `service bind9 restart`
+
+Untuk mengecek apakah sudah berhasil atau belum dapat dilakukan dengan melakukan. Tapi sebelum itu install dnsutils dengan command berikut ini 
+```
+apt-get update
+apt-get install dnsutils
+```
+Lalu buka node client dan cek dengan command berikut ini 
+```
+host -t PTR 192.233.2.4
+```
+
+#### Dokumentasi 
+- Mulawarman  
+![image](https://github.com/user-attachments/assets/8ac47470-e10f-4594-a5a9-743d1191d4de)
+- GrahamBell  
+![image](https://github.com/user-attachments/assets/36571d9e-cb23-4d8e-ab46-728b57e32bb0)
+- Samaratungga  
+![image](https://github.com/user-attachments/assets/243ca389-7b0d-4c31-bd14-8f8abc2b2bf6)
+- Srikandi  
+![image](https://github.com/user-attachments/assets/7483c617-eca3-4202-b16d-b28d5db22e36)
 
 ## No 7
 Akhir-akhir ini seringkali terjadi serangan brainrot ke DNS Server Utama, sebagai tindakan antisipasi kamu diperintahkan untuk membuat DNS Slave di Majapahit untuk semua domain yang sudah dibuat sebelumnya yang mengarah ke Sriwijaya.

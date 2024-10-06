@@ -562,6 +562,48 @@ Untuk mengecek apakah sudah berhasil atau belum bisa dilakukan dengan mengirimka
 
 ## No 8
 > Kamu juga diperintahkan untuk membuat subdomain khusus melacak kekuatan tersembunyi di Ohio dengan subdomain cakra.sudarsana.xxxx.com yang mengarah ke Bedahulu.
+Untuk menyelesaikan no 8 kita harus mengedit isi konfigurasi pada Sriwijaya dengan domain sudarsana dengan mengirimkan command `nano /etc/bind/jarkom33/sudarsana.it33.com` lalu tambahkan konfigurasi berikut dengan IP milik Bedahulu `192.233.2.5`
+```
+cakra		IN      A       10.73.1.5
+www.cakra	IN      CNAME   cakra.sudarsana.it33.com.
+
+```
+Sehingga isi dari file konfigurasi sudarsana secara keseluruhan akan menjadi seperti berikut ini 
+```
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     sudarsana.it33.com. root.sudarsana.it33.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      sudarsana.it33.com.
+@       IN      A       192.233.2.2
+@       IN      AAAA    ::1
+www     IN      CNAME   sudarsana.it33.com.
+cakra		IN      A       10.73.1.5
+www.cakra	IN      CNAME   cakra.sudarsana.it33.com.
+```
+Setelah itu restart bind9 dengan `service bind9 restart` dan lakukan cek tes ping kepada node client dengan command berikut ini
+```
+ping cakra.sudarsana.it.33.com
+```
+
+#### Dokumentasi
+- Mulawarman  
+![image](https://github.com/user-attachments/assets/1b595b22-4252-4ed3-ba7c-b78b3213be53)
+- GrahamBell  
+![image](https://github.com/user-attachments/assets/24c899e1-8eae-45c3-8524-b494734c7bd9)
+- Samaratungga  
+![image](https://github.com/user-attachments/assets/0327ee7d-c846-4a82-a3c1-45fa52f46e83)
+- Srikandi  
+![image](https://github.com/user-attachments/assets/e199c0d2-82fe-4f5a-bbd7-e7e3c9528dd5)
+
+
 
 ## No 9
 > Karena terjadi serangan DDOS oleh shikanoko nokonoko koshitantan (NUN), sehingga sistem komunikasinya terhalang. Untuk melindungi warga, kita diperlukan untuk membuat sistem peringatan dari siren man oleh Frekuensi Freak dan memasukkannya ke subdomain panah.pasopati.xxxx.com dalam folder panah dan pastikan dapat diakses secara mudah dengan menambahkan alias www.panah.pasopati.xxxx.com dan mendelegasikan subdomain tersebut ke Majapahit dengan alamat IP menuju radar di Kotalingga.

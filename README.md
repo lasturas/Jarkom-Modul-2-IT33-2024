@@ -347,47 +347,41 @@ Lalu coba cek dengan melakukan command `ping pasopati.it33.com` pada setiap clie
 ## No 4
 Markas pusat meminta dibuatnya domain khusus untuk menaruh informasi persenjataan dan suplai yang tersebar. Informasi dan suplai meme terbaru tersebut mengarah ke Tanjungkulai dan domain yang ingin digunakan adalah rujapala.xxxx.com dengan alias www.rujapala.xxxx.com.
 
-Cara mengerjakan no 4 juga sama dengan dua soal sebelumnya, buka terminal Sriwijaya dan kita hanya perlu mengubah ip dan domain saja. Berikut kode di dalam file yang dinamai jarkom4.bashrc
+Untuk pengerjaan soal ini sama dengan soal no 2, kita hanya perlu mengubah ip dan domain saja. Berikut kode di dalam file `nano /etc/bind/named.conf.local`
+
 ```
-#!/bin/bash
-
-# Domain rujapala.it33.com
-echo 'zone "rujapala.it33.com" {
-	type master;
-	file "/etc/bind/jarkom/rujapala.it33.com";
-};' > /etc/bind/named.conf.local
-
-mkdir /etc/bind/jarkom
-
-cp /etc/bind/db.local /etc/bind/jarkom/rujapala.it33.com
-
-echo '
+zone "rujapala.it33.com" {
+type master;
+file "/etc/bind/jarkom33/rujapala.it33.com";
+};
+```
+Dan berikut isi konfigurasi yang ada di dalam `nano /etc/bind/jarkom33/rujapala.it33.com`  dengan IP Tanjungkulai `192.233.2.6`
+```
 ;
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     rujapala.it33.com. rujapala.it33.com. (
-                        2024050301      ; Serial
+@       IN      SOA     rujapala.it33.com. root.rujapala.it33.com. (
+                              2         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      rujapala.it33.com.
-@       IN      A       192.233.2.6     ; IP Tanjungkulai
-www     IN      CNAME   rujapala.it33.com.' > /etc/bind/jarkom/rujapala.it33.com
+@       IN      A       192.233.2.6
+@       IN      AAAA    ::1
+www     IN      CNAME   rujapala.it33.com.
 
-service bind9 restart
 ```
-Lalu kita jalankan  `chmod +x jarkom3.bashrc` dan langsung jalankan filenya dengan `./jarkom3.bashrc`
-Setelah dijalankan kirimkan command 
+Terakhir restart bind9 dengan command `service bind9 restart`
+
+Setelah itu agar client bisa tersambung dengan domain maka buka konfigurasi tiap client dan tambahkan konfigurasi berikut ini yang merupakan IP dari Sriwijaya (192.233.2.7) sebagai DNS Master, dan IP Majapahit (192.233.1.2) sebagai DNS Slave 
 ```
-service bind9 restart
+up echo nameserver 192.233.2.7 >> /etc/resolv.conf
+up echo nameserver 192.233.1.2  >> /etc/resolv.conf
 ```
-Jika sudah maka coba lakukan ping pada semua node client 
-```
-ping pasopati.it33.com
-```
+Lalu coba cek dengan melakukan command `ping rujapala.it33.com` pada setiap client untuk mengecek apakah sudah berjalan dengan baik atau belum 
 #### Dokumentasi Rujapala
 - Mulawarman  
 ![image](https://github.com/user-attachments/assets/276bf2f3-910f-40ae-83d1-f036083fa090)

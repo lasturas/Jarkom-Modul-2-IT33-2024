@@ -234,47 +234,54 @@ Selanjutkan `reload all nodes` dan uji dengan melakukan `ping google.com` pada s
 ## No 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke Solok dengan alamat sudarsana.xxxx.com dengan alias www.sudarsana.xxxx.com, dimana xxxx merupakan kode kelompok. Contoh: sudarsana.it01.com.
 
-Pertama buka terminal Sriwijaya dan buat sebuah file (saya namai jarkom2) `nano jarkom2.bashrc` dan inputkan kode berikut 
+Jalankan pada node Sriwijaya dan buka file conf  dengan command `nano /etc/bind/named.conf.local`
+
 ```
-#!/bin/bash
+zone "sudarsana.it33.com" {
+type master;
+file "/etc/bind/jarkom33/sudarsana.it33.com";
+};
+```
 
-# Domain sudarsana.it33.com
-echo 'zone "sudarsana.it33.com" {
-	type master;
-	file "/etc/bind/jarkom/sudarsana.it33.com";
-};' > /etc/bind/named.conf.local
+Lalu buat folder jarkom33 sesuai dengan nama pada konfigurasi 
 
-mkdir /etc/bind/jarkom
+```
+mkdir /etc/bind/jarkom33
+```
 
-cp /etc/bind/db.local /etc/bind/jarkom/sudarsana.it33.com
+Setelah itu copy file `db.local` menuju folder jarkom33 yang sudah dibuat 
 
-echo '
+```
+cp /etc/bind/db.local /etc/bind/jarkom33/sudarsana.it33.com
+```
+
+Lalu buka file dengan `nano /etc/bind/jarkom33/sudarsana.it33.com` lalu edit konfigurasi menjadi seperti berikut dengan IP Solok `192.233.2.2`
+```
 ;
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     sudarsana.it33.com. sudarsana.it33.com. (
-                        2024050301      ; Serial
+@       IN      SOA     sudarsana.it33.com. root.sudarsana.it33.com. (
+                              2         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      sudarsana.it33.com.
-@       IN      A       192.233.2.2     ; IP Solok
-www     IN      CNAME   sudarsana.it33.com.' > /etc/bind/jarkom/sudarsana.it33.com
+@       IN      A       192.233.2.2
+@       IN      AAAA    ::1
+www     IN      CNAME   sudarsana.it33.com.
+```
+Terakhir restart bind9 dengan command `service bind9 restart`
 
-service bind9 restart
+Setelah itu agar client bisa tersambung dengan domain maka buka konfigurasi tiap client dan tambahkan konfigurasi berikut ini yang merupakan IP dari Sriwijaya (192.233.2.7) sebagai DNS Master, dan IP Majapahit (192.233.1.2) sebagai DNS Slave 
 ```
-Selanjutnya jalankan `chmod +x jarkom2.bashrc` dan langsung jalankan filenya dengan `./jarkom2.bashrc`
-Setelah dijalankan kirimkan command 
+up echo nameserver 192.233.2.7 >> /etc/resolv.conf
+up echo nameserver 192.233.1.2  >> /etc/resolv.conf
 ```
-service bind9 restart
-```
-Jika sudah maka coba lakukan ping pada semua node client 
-```
-ping sudarsana.it33.com
-```
+Lalu coba cek dengan melakukan command `ping sudarsana.it33.com` pada setiap client untuk mengecek apakah sudah berjalan dengan baik atau belum 
+
 #### Dokumentasi Sudarsana 
 - Mulawarman  
 ![image](https://github.com/user-attachments/assets/281da52c-f758-4303-8313-955abaeb3fb3)
@@ -290,47 +297,41 @@ ping sudarsana.it33.com
 ## No 3
 Para pasukan juga perlu mengetahui mana titik yang akan diserang, sehingga dibutuhkan domain lain yaitu pasopati.xxxx.com dengan alias www.pasopati.xxxx.com yang mengarah ke Kotalingga.
 
-Untuk pengerjaan soal ini sama dengan soal no 2, kita hanya perlu mengubah ip dan domain saja. Berikut kode di dalam file yang dinamai jarkom3.bashrc 
+Untuk pengerjaan soal ini sama dengan soal no 2, kita hanya perlu mengubah ip dan domain saja. Berikut kode di dalam file `nano /etc/bind/named.conf.local`
+
 ```
-#!/bin/bash
-
-# Domain pasopati.it33.com
-echo 'zone "pasopati.it33.com" {
-	type master;
-	file "/etc/bind/jarkom/pasopati.it33.com";
-};' > /etc/bind/named.conf.local
-
-mkdir /etc/bind/jarkom
-
-cp /etc/bind/db.local /etc/bind/jarkom/pasopati.it33.com
-
-echo '
+zone "pasopati.it33.com" {
+type master;
+file "/etc/bind/jarkom33/pasopati.it33.com";
+};
+```
+Dan berikut isi konfigurasi yang ada di dalam `nano /etc/bind/jarkom33/pasopati.it33.com`  dengan IP Kotalingga `192.233.2.4`
+```
 ;
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     pasopati.it33.com. pasopati.it33.com. (
-                        2024050301      ; Serial
+@       IN      SOA     pasopati.it33.com. root.pasopati.it33.com. (
+                              2         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      pasopati.it33.com.
-@       IN      A       192.233.2.4     ; IP Kotalingga
-www     IN      CNAME   pasopati.it33.com.' > /etc/bind/jarkom/pasopati.it33.com
+@       IN      A       192.233.2.4
+@       IN      AAAA    ::1
+www     IN      CNAME   pasopati.it33.com.
 
-service bind9 restart
 ```
-Lalu kita jalankan  `chmod +x jarkom3.bashrc` dan langsung jalankan filenya dengan `./jarkom3.bashrc`
-Setelah dijalankan kirimkan command 
+Terakhir restart bind9 dengan command `service bind9 restart`
+
+Setelah itu agar client bisa tersambung dengan domain maka buka konfigurasi tiap client dan tambahkan konfigurasi berikut ini yang merupakan IP dari Sriwijaya (192.233.2.7) sebagai DNS Master, dan IP Majapahit (192.233.1.2) sebagai DNS Slave 
 ```
-service bind9 restart
+up echo nameserver 192.233.2.7 >> /etc/resolv.conf
+up echo nameserver 192.233.1.2  >> /etc/resolv.conf
 ```
-Jika sudah maka coba lakukan ping pada semua node client 
-```
-ping pasopati.it33.com
-```
+Lalu coba cek dengan melakukan command `ping pasopati.it33.com` pada setiap client untuk mengecek apakah sudah berjalan dengan baik atau belum 
 #### Dokumentasi Pasopati
 - Mulawarman  
 ![image](https://github.com/user-attachments/assets/477b664e-8772-4b04-b537-882c0b2e8f15)
